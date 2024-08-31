@@ -17,6 +17,8 @@ Adding arguments can be done as following:
  $ python main.py {interval} {stop key} {position}
 ```
 
+You can also add the `-v` flag at the end to enable verbosity.
+
 ## Setup
 
 To get started, run

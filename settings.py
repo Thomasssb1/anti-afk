@@ -4,12 +4,12 @@ import pygetwindow as gw
 
 
 class Settings:
-    def __init__(self, interval, keyToStop, position):
+    def __init__(self, interval, keyToStop, position, verbose):
         self.window = None
         self.interval = Settings.parseInterval(interval)
         self.key = keyToStop
         self.position = Settings.parsePosition(position)
-        self.lastUsed = datetime.now()
+        self.verbose = verbose
 
     def parsePosition(position):
         if position == None:
@@ -34,13 +34,6 @@ class Settings:
                 raise Exception("Invalid interval format")
         except:
             raise Exception("Invalid interval format")
-
-    def checkInterval(self):
-        if (datetime.now() - self.lastUsed) >= self.interval:
-            return True
-
-    def updateLastUsed(self):
-        self.lastUsed = datetime.now()
 
     def setWindow(self, window):
         self.window = window
