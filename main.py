@@ -27,7 +27,7 @@ def click(settings):
 if __name__ == "__main__":
     args = sys.argv[1:]
     settings = Settings(
-        len(args) >= 1 and args[0] or "2s",
+        len(args) >= 1 and args[0] or "10m",
         len(args) >= 2 and args[1] or "q",
         len(args) >= 3 and args[2] or None,
     )
