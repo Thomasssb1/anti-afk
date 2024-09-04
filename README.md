@@ -7,14 +7,17 @@ This program allows you to set intervals for reopening the program to reset the 
 
 Currently, you can have the following arguments:
 
-- `interval` - any integer followed by 's', 'm', 'h' (Defaults to 10m)
+- `interval` - any integer followed by 'ms', 's', 'm', 'h' (Defaults to 10m)
 - `stop key` - any alphanumeric key used to terminate the program (Defaults to 'q')
+- `pause key` - any alphanumeric key used to pause the program (Defaults to 'p')
+- `locked` - whether or not the mouse is locked to {position} and the selected window<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- if locked is disabled, you can freely move the mouse whilst clicking (operating the same as an autoclicker)
 - `position` - a relative position for the mouse to target when entering the program (Defaults to centre of screen)
 
-Adding arguments can be done as following:
+Adding arguments can be done as following (you need to maintain the position as shown above):
 
 ```zsh
- $ python main.py {interval} {stop key} {position}
+ $ python main.py {interval} {stop key} {pause key} {locked = true/false} {position}
 ```
 
 You can also add the `-v` flag at the end to enable verbosity.
