@@ -22,6 +22,14 @@ class ScheduledClick(Click):
         self.settings.scheduler.start()
         self.running = True
 
+    def pause(self, _):
+        if self.running:
+            self.settings.scheduler.pause_job("click")
+            self.running = False
+        else:
+            self.settings.scheduler.resume_job("click")
+            self.running = Truep
+
     def end(self, _):
         if self.running:
             self.settings.scheduler.remove_job("click")

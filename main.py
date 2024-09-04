@@ -14,5 +14,6 @@ if __name__ == "__main__":
 
     scheduled_click = ScheduledClick(settings)
 
-    hook = keyboard.on_press_key(settings.key, scheduled_click.end)
+    keyboard.on_press_key(settings.key, scheduled_click.end)
+    keyboard.on_press_key(settings.pause_key, scheduled_click.pause)
     scheduled_click.start()

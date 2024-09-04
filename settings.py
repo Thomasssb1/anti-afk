@@ -16,6 +16,7 @@ class Settings:
         self.window = None
         self.interval = parsed_args["interval"]
         self.key = parsed_args["key"]
+        self.pause_key = parsed_args["pause_key"]
         self.position = parsed_args["position"]
         self.locked = parsed_args["locked"]
         self.verbose = parsed_args["verbose"]
@@ -31,8 +32,9 @@ class Settings:
             args = args[:-1]
         return dict(interval= len(args) >= 1 and Settings.parse_interval(args[0]) or "10m", 
                 key= len(args) >= 2 and args[1] or "q",
-                locked= Settings.parse_boolean(args[2]) if (len(args) >= 3 and args[2] != None) else True,
-                position= len(args) >= 4 and Settings.parse_position(args[3]) or None, 
+                pause_key = len(args) >= 3 and args[2] or "p",
+                locked= Settings.parse_boolean(args[3]) if (len(args) >= 4 and args[3] != None) else True,
+                position= len(args) >= 5 and Settings.parse_position(args[4]) or None, 
                 verbose= verbose)
 
     @staticmethod
